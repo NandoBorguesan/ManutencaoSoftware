@@ -64,15 +64,64 @@
                 </b:tab>
                 <b:tab title="Questionário" style="background: rgba(250,250,250,0.6);">
                     <b:form inline="true">
-                        <h:panelGrid columns="2" cellpadding="6">
+                        <h:panelGrid columns="2" cellpadding="6" >
                             <b:inputText label="Aluno" labelStyle="width:50px;" size="60"></b:inputText>
                             <br></br>
-                            <b:panelGrid size="xs" columns="2">
-                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel="Sim"  itemValue="true" required="true" />
-                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel="Não" itemValue="false" />
+                            <b:panelGrid size="xs" columns="2" style="border-top : 1px solid whitesmoke;
+
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Sim"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Não" itemValue="false" />
                             </b:panelGrid>
                             <b:inputText label="Plano de Saúde" labelStyle="width:140px;"></b:inputText>
-                            
+                            <b:panelGrid size="xs" columns="3" style="border-top : 1px solid whitesmoke;
+
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Sim"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Não" itemValue="false" />
+                            </b:panelGrid>
+                            <b:inputText label="Outro Esporte" labelStyle="width:140px;"></b:inputText>
+                            <b:panelGrid size="xs" columns="4" style="border-top : 1px solid whitesmoke;
+                                         border-right : 1px solid whitesmoke;
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Aprender a nadar"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Bronquite" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Coluna"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Obesidade" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Treinar"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Manter a forma" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Gestante"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Conselho Médico" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Outros - Especifique" style="top: 25px"  itemValue="true" required="true" />
+                                <b:inputText label="" labelStyle="width:140px;"></b:inputText>  
+                            </b:panelGrid>
+                            <br></br>
+                            <b:panelGrid size="xs" tooltip="TEste da parada" columns="4" style="border-top : 1px solid whitesmoke;
+                                         border-right : 1px solid whitesmoke;
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Jornal"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Placa" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Cartaz"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Panfleto" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Amigos"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Outdoor" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Internet"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Passando em frente" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Aluno da Academia - Qual" style="width: 250px; top: 25px"  itemValue="true" required="true" />
+                                <b:inputText label="" labelStyle="width:140px;"></b:inputText>  
+                            </b:panelGrid>
+                            <br></br>
+                            <b:panelGrid columns="4" size="sm" style="top: 40px" >
+                                <b:commandButton value="Gravar"  icon-awesome="save" ajax="true" update="@none" look="primary" style="width:180px"/>
+                                <b:commandButton value="Cancelar" icon="cancel" ajax="true" update="@none" look="warning" style="width:180px"/>
+                                <b:commandButton value="Excluir" icon="trash" ajax="true" update="@none" look="danger" style="width:180px"/>
+                                <b:commandButton value="Fechar" icon="remove" ajax="true" update="@none" style="width:180px"/>
+                            </b:panelGrid>
+
                         </h:panelGrid>
                     </b:form>
                 </b:tab>
