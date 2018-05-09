@@ -13,16 +13,27 @@
 
         <div class="wrapper">
 
-            <b:navBar brand="Academia" brandHref="index.jsf" brand-style="font-weight: bold; font-family: Courier New, Times, serif;" id="dropMenuExample" >
+             <b:navBar brand="Academia" brandHref="index.jsf" brand-style="font-weight: bold; font-family: Courier New, Times, serif;" id="dropMenuExample" >
                 <b:navbarLinks >
-                    <b:navLink value="Cadastro" icon-awesome="save" href="#"></b:navLink>
-                    <b:navLink value="Alunos" icon-awesome="users" href="cadAluno.jsf"></b:navLink>
-                    <b:navLink value="Horários" icon-awesome="calendar" href="#"></b:navLink>
-                    <b:navLink value="Vendas" icon-awesome="shopping-cart" href="#"></b:navLink>
-                    <b:navLink value="Compras" icon-awesome="credit-card" href="#"></b:navLink>
-                    <b:navLink value="Caixa" icon-awesome="inbox" href="#"></b:navLink>
+                    <b:dropMenu value="Cadastro" icon-awesome="save">
+                        <b:navLink value="Atividades" href="cadAtividade.jsf"></b:navLink>
+                        <b:navLink value="Alunos" href="cadAluno.jsf"></b:navLink>
+                        <b:navLink value="Bancos" href="cadBanco.jsf"></b:navLink>
+                        <b:navLink value="Equipamentos" href="cadEquipamento.jsf"></b:navLink>
+                        <b:navLink value="Usuários" href="cadUsuario.jsf"></b:navLink>
+                        <b:navLink value="Horários" href="cadHorario.jsf"></b:navLink>
+                        <b:navLink value="Profissionais" href="cadProfissional.jsf"></b:navLink>
+                    </b:dropMenu>
+                    <b:navLink value="Matrícula de Alunos" icon-awesome="users" href="cadAlunoHorario.jsf"></b:navLink>
+                    <b:navLink value="Vendas" icon-awesome="shopping-cart" href="vendas.jsf"></b:navLink>
+                    <b:navLink value="Compras" icon-awesome="credit-card" href="cadCompra.jsf"></b:navLink>
+                    <b:dropMenu value="Caixa" icon-awesome="inbox">
+                        <b:navLink value="Recebimentos de Mensalidades" href="mensalidade.jsf"></b:navLink>
+                        <b:navLink value="Fluxo de Caixa" href="fluxoCaixa.jsf"></b:navLink>
+                        <b:navLink value="Controle de Cheques" href="controleCheques.jsf"></b:navLink>
+                    </b:dropMenu>
                     <b:navLink value="Sistema" icon-awesome="sitemap" href="#"></b:navLink>
-                    <b:navLink value="Relatórios" icon-awesome="file" href="#"></b:navLink>
+                    <b:navLink value="Relatórios" icon-awesome="file" href="relatorio.jsf"></b:navLink>
                     <b:navLink value="Ajuda" icon-awesome="question" href="#"></b:navLink>
                     <b:navLink value="Sair" icon-awesome="sign-out" href="#"></b:navLink>
                 </b:navbarLinks>
@@ -35,7 +46,9 @@
                         <h:panelGrid columns="3" cellpadding="6">
                             <b:inputText label="Código:" labelStyle="width:140px;"></b:inputText>
                             <b:inputText label="Aluno" labelStyle="width:140px;"></b:inputText>
-                            <b:inputText label="Data de Nascimento:" labelStyle="width:140px;"></b:inputText>
+                              <b:datepicker  mode="icon-popup"
+                                       firstDay="1" value="#{dateBean.cdate}" 
+                                       label="Data de Nascimento" label-col-sm="3" col-sm="2"/>
                             <b:inputText label="Sexo:" labelStyle="width:140px;"></b:inputText>
                             <b:inputText label="Ativo\Inativo:" labelStyle="width:140px;" size="28"></b:inputText>
                             <b:inputText label="Fone:" labelStyle="width:140px;"></b:inputText>
