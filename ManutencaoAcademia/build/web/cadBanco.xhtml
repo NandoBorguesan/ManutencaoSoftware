@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro de Bancos</title>
+        <link rel="stylesheet" href="/ManutencaoAcademia/footer.css" type="text/css"/>
+    </h:head>
+
+    <h:body style="background: url(academia.jpg);  ">
+
+        <div class="wrapper">
+
+            <b:navBar brand="Academia" brandHref="index.jsf" brand-style="font-weight: bold; font-family: Courier New, Times, serif;" id="dropMenuExample" >
+                <b:navbarLinks >
+                    <b:dropMenu value="Cadastro" icon-awesome="save">
+                        <b:navLink value="Atividades" href="cadAtividade.jsf"></b:navLink>
+                        <b:navLink value="Alunos" href="cadAluno.jsf"></b:navLink>
+                        <b:navLink value="Bancos" href="cadBanco.jsf"></b:navLink>
+                        <b:navLink value="Equipamentos" href="cadEquipamento.jsf"></b:navLink>
+                        <b:navLink value="Usuários" href="cadUsuario.jsf"></b:navLink>
+                        <b:navLink value="Horários" href="cadHorario.jsf"></b:navLink>
+                        <b:navLink value="Profissionais" href="cadProfissional.jsf"></b:navLink>
+                    </b:dropMenu>
+                    <b:navLink value="Matrícula de Alunos" icon-awesome="users" href="cadAlunoHorario.jsf"></b:navLink>
+                    <b:navLink value="Vendas" icon-awesome="shopping-cart" href="vendas.jsf"></b:navLink>
+                    <b:navLink value="Compras" icon-awesome="credit-card" href="cadCompra.jsf"></b:navLink>
+                    <b:dropMenu value="Caixa" icon-awesome="inbox">
+                        <b:navLink value="Recebimentos de Mensalidades" href="mensalidade.jsf"></b:navLink>
+                        <b:navLink value="Fluxo de Caixa" href="fluxoCaixa.jsf"></b:navLink>
+                        <b:navLink value="Controle de Cheques" href="controleCheques.jsf"></b:navLink>
+                    </b:dropMenu>
+                    <b:navLink value="Sistema" icon-awesome="sitemap" href="#"></b:navLink>
+                    <b:navLink value="Relatórios" icon-awesome="file" href="relatorio.jsf"></b:navLink>
+                    <b:navLink value="Ajuda" icon-awesome="question" href="#"></b:navLink>
+                    <b:navLink value="Sair" icon-awesome="sign-out" href="#"></b:navLink>
+                </b:navbarLinks>
+            </b:navBar>
+            <b:panel style="background: rgba(250,250,250,0.63); border-right: 1px solid #ddd;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;padding:10px">
+                <b:form inline="true">
+                    <h:panelGrid columns="5" cellpadding="6" >
+                        <b:inputText label="Aluno:" labelStyle="width:140px;"></b:inputText>
+                        <b:inputText label="Agência:" labelStyle="width:140px;"></b:inputText>
+                        <b:inputText label="Conta:" labelStyle="width:140px;"></b:inputText>
+                        <b:inputText label="Descrição:" labelStyle="width:140px;"></b:inputText>
+                    </h:panelGrid>
+                </b:form>
+                <br></br>
+            </b:panel>
+
+            <br></br>
+            <b:panel style="background: rgba(250,250,250,0.63);">
+                <h:form>
+                    <b:panelGrid columns="6" size="sm" >
+                        <b:commandButton value="Gravar"  icon-awesome="save" ajax="true" update="@none" look="primary" style="width:180px"/>
+                        <b:commandButton value="Cancelar" icon="cancel" ajax="true" update="@none" look="warning" style="width:180px"/>
+                        <b:commandButton value="Excluir" icon="trash" ajax="true" update="@none" look="danger" style="width:180px"/>
+                        <b:commandButton value="Fechar" icon="remove" ajax="true" update="@none" style="width:180px"/>
+                    </b:panelGrid>
+                </h:form>
+            </b:panel>
+            <br></br>
+            <br></br>
+            <br></br>
+        </div>
+        <br></br>
+
+
+        <footer class="footer">
+            <b:panel style="background: #52565a; border-color: #52565a;">
+                <center>
+                    <h:outputText value="© 2017 ACADEMIA - TODOS OS DIREITOS RESERVADOS" style="color: #cccccc; font-family: Courier New, Times, serif; font-size: 15px"/>
+                </center>
+            </b:panel>
+        </footer>
+    </h:body>
+</html>
+

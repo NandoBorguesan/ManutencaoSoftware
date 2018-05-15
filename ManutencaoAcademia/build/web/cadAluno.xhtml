@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro Aluno</title>
+        <link rel="stylesheet" href="/ManutencaoAcademia/footer.css" type="text/css"/>
+    </h:head>
+
+    <h:body style="background: url(academia.jpg);  ">
+
+        <div class="wrapper">
+
+             <b:navBar brand="Academia" brandHref="index.jsf" brand-style="font-weight: bold; font-family: Courier New, Times, serif;" id="dropMenuExample" >
+                <b:navbarLinks >
+                    <b:dropMenu value="Cadastro" icon-awesome="save">
+                        <b:navLink value="Atividades" href="cadAtividade.jsf"></b:navLink>
+                        <b:navLink value="Alunos" href="cadAluno.jsf"></b:navLink>
+                        <b:navLink value="Bancos" href="cadBanco.jsf"></b:navLink>
+                        <b:navLink value="Equipamentos" href="cadEquipamento.jsf"></b:navLink>
+                        <b:navLink value="Usuários" href="cadUsuario.jsf"></b:navLink>
+                        <b:navLink value="Horários" href="cadHorario.jsf"></b:navLink>
+                        <b:navLink value="Profissionais" href="cadProfissional.jsf"></b:navLink>
+                    </b:dropMenu>
+                    <b:navLink value="Matrícula de Alunos" icon-awesome="users" href="cadAlunoHorario.jsf"></b:navLink>
+                    <b:navLink value="Vendas" icon-awesome="shopping-cart" href="vendas.jsf"></b:navLink>
+                    <b:navLink value="Compras" icon-awesome="credit-card" href="cadCompra.jsf"></b:navLink>
+                    <b:dropMenu value="Caixa" icon-awesome="inbox">
+                        <b:navLink value="Recebimentos de Mensalidades" href="mensalidade.jsf"></b:navLink>
+                        <b:navLink value="Fluxo de Caixa" href="fluxoCaixa.jsf"></b:navLink>
+                        <b:navLink value="Controle de Cheques" href="controleCheques.jsf"></b:navLink>
+                    </b:dropMenu>
+                    <b:navLink value="Sistema" icon-awesome="sitemap" href="#"></b:navLink>
+                    <b:navLink value="Relatórios" icon-awesome="file" href="relatorio.jsf"></b:navLink>
+                    <b:navLink value="Ajuda" icon-awesome="question" href="#"></b:navLink>
+                    <b:navLink value="Sair" icon-awesome="sign-out" href="#"></b:navLink>
+                </b:navbarLinks>
+            </b:navBar>
+            <b:tabView contentStyle="background: rgba(250,250,250,0.63); border-right: 1px solid #ddd;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;padding:10px">
+                <b:tab title="Dados Pessoais" style="background: rgba(250,250,250,0.6);">
+                    <br></br>
+
+                    <b:form inline="true">
+                        <h:panelGrid columns="3" cellpadding="6">
+                            <b:inputText label="Código:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="Aluno" labelStyle="width:140px;"></b:inputText>
+                              <b:datepicker  mode="icon-popup"
+                                       firstDay="1" value="#{dateBean.cdate}" 
+                                       label="Data de Nascimento" label-col-sm="3" col-sm="2"/>
+                            <b:inputText label="Sexo:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="Ativo\Inativo:" labelStyle="width:140px;" size="28"></b:inputText>
+                            <b:inputText label="Fone:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="Celular:" labelStyle="width:140px;" size="20"></b:inputText>
+                            <b:inputText label="E-mail:" labelStyle="width:140px;" size="20"><f:facet name="prepend">
+                                    <h:outputText value="@" />
+                                </f:facet></b:inputText>
+                            <b:inputText label="Cidade:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="UF:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="CEP:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="Rua:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="Numero:" labelStyle="width:140px;"></b:inputText>
+                            <b:inputText label="Bairro:" labelStyle="width:140px;"></b:inputText>
+                        </h:panelGrid>
+                        <br></br>
+
+                        <h:form>
+                            <b:panelGrid columns="4" size="sm" >
+                                <b:commandButton value="Gravar"  icon-awesome="save" ajax="true" update="@none" look="primary" style="width:180px"/>
+                                <b:commandButton value="Cancelar" icon="cancel" ajax="true" update="@none" look="warning" style="width:180px"/>
+                                <b:commandButton value="Excluir" icon="trash" ajax="true" update="@none" look="danger" style="width:180px"/>
+                                <b:commandButton value="Fechar" icon="remove" ajax="true" update="@none" style="width:180px"/>
+                            </b:panelGrid>
+                        </h:form>
+                    </b:form>
+                </b:tab>
+                <b:tab title="Questionário" style="background: rgba(250,250,250,0.6);">
+                    <b:form inline="true">
+                        <h:panelGrid columns="2" cellpadding="6" >
+                            <b:inputText label="Aluno" labelStyle="width:50px;" size="60"></b:inputText>
+                            <br></br>
+                            <b:panelGrid size="xs" columns="2" style="border-top : 1px solid whitesmoke;
+
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Sim"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Não" itemValue="false" />
+                            </b:panelGrid>
+                            <b:inputText label="Plano de Saúde" labelStyle="width:140px;"></b:inputText>
+                            <b:panelGrid size="xs" columns="3" style="border-top : 1px solid whitesmoke;
+
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Sim"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Não" itemValue="false" />
+                            </b:panelGrid>
+                            <b:inputText label="Outro Esporte" labelStyle="width:140px;"></b:inputText>
+                            <b:panelGrid size="xs" columns="4" style="border-top : 1px solid whitesmoke;
+                                         border-right : 1px solid whitesmoke;
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Aprender a nadar"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Bronquite" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Coluna"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Obesidade" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Treinar"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Manter a forma" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Gestante"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Conselho Médico" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Outros - Especifique" style="top: 25px"  itemValue="true" required="true" />
+                                <b:inputText label="" labelStyle="width:140px;"></b:inputText>  
+                            </b:panelGrid>
+                            <br></br>
+                            <b:panelGrid size="xs" tooltip="TEste da parada" columns="4" style="border-top : 1px solid whitesmoke;
+                                         border-right : 1px solid whitesmoke;
+                                         border-bottom : 1px solid whitesmoke;
+                                         border-left : 1px solid whitesmoke;">
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Jornal"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Placa" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Cartaz"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Panfleto" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Amigos"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Outdoor" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Internet"  itemValue="true" required="true" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Passando em frente" itemValue="false" />
+                                <b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel=" Aluno da Academia - Qual" style="width: 250px; top: 25px"  itemValue="true" required="true" />
+                                <b:inputText label="" labelStyle="width:140px;"></b:inputText>  
+                            </b:panelGrid>
+                            <br></br>
+                            <b:panelGrid columns="4" size="sm" style="top: 40px" >
+                                <b:commandButton value="Gravar"  icon-awesome="save" ajax="true" update="@none" look="primary" style="width:180px"/>
+                                <b:commandButton value="Cancelar" icon="cancel" ajax="true" update="@none" look="warning" style="width:180px"/>
+                                <b:commandButton value="Excluir" icon="trash" ajax="true" update="@none" look="danger" style="width:180px"/>
+                                <b:commandButton value="Fechar" icon="remove" ajax="true" update="@none" style="width:180px"/>
+                            </b:panelGrid>
+
+                        </h:panelGrid>
+                    </b:form>
+                </b:tab>
+            </b:tabView>
+            <br></br>
+            <b:panel style="background: rgba(250,250,250,0.63);">
+                <h:form>
+                    <b:panelGrid columns="6" size="sm" >
+                        <b:commandButton value="Imprimir" icon="print" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Carne" icon="print" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Extrato" icon="print" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Presença" icon-awesome="plus" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Pagamento" icon="credit-card" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Matrícula" icon="print" ajax="true" update="@none" look="primary" style="width:120px"/>
+                    </b:panelGrid>
+                </h:form>
+            </b:panel>
+            <br></br>
+            <br></br>
+            <br></br>
+        </div>
+        <br></br>
+
+
+        <footer class="footer">
+            <b:panel style="background: #52565a; border-color: #52565a;">
+                <center>
+                    <h:outputText value="© 2017 ACADEMIA - TODOS OS DIREITOS RESERVADOS" style="color: #cccccc; font-family: Courier New, Times, serif; font-size: 15px"/>
+                </center>
+            </b:panel>
+        </footer>
+    </h:body>
+</html>
+
