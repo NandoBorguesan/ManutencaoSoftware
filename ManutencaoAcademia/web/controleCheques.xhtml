@@ -5,7 +5,7 @@
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Cadastro de Horários</title>
+        <title>Controle de Cheques</title>
         <link rel="stylesheet" href="/ManutencaoAcademia/footer.css" type="text/css"/>
     </h:head>
 
@@ -40,23 +40,40 @@
             </b:navBar>
             <b:panel style="background: rgba(250,250,250,0.63); border-right: 1px solid #ddd;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;padding:10px">
                 <b:form inline="true">
-                    <h:panelGrid columns="5" cellpadding="6" >
-                        <b:inputText label="Descrição" labelStyle="width:140px;"></b:inputText>
-                        <b:inputText label="Inicio" labelStyle="width:140px;"></b:inputText>
-                          <b:inputText label="Fim" labelStyle="width:140px;"></b:inputText>
-                      </h:panelGrid>
+                    <h:panelGrid columns="3" cellpadding="6" >
+                        <b:inputText label="Cheques compensados" labelStyle="width:140px; color: green"></b:inputText>
+                        <b:inputText label="Cheques em aberto" labelStyle="width:140px; color: #AFAF00"></b:inputText>
+                        <b:inputText label="Cheques vencidos" labelStyle="width:140px; color: red"></b:inputText>
+                    </h:panelGrid>
                 </b:form>
                 <br></br>
+                <h:form>
+                    <b:dataTable value="#{carPool.carPool}"
+                                 var="car"
+                                 customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json">
+                        <b:dataTableColumn value="#{car.venc}" label="Data Entrada"/>
+                        <b:dataTableColumn value="#{car.desc}" label="Banco"/>
+                        <b:dataTableColumn value="#{car.valorUnitario}" label="Código"/>
+                        <b:dataTableColumn value="#{car.qtd}" label="Agência"/>
+                        <b:dataTableColumn value="#{car.desconto}" label="Conta"/>
+                        <b:dataTableColumn value="#{car.qtd}" label="Valor"/>
+                        <b:dataTableColumn value="#{car.total}"  label="Vencimento"/>
+                        <b:dataTableColumn value="#{car.dataCompensacao}"  label="Data Compensação"/>
+                        <b:dataTableColumn value="#{car.situacao}"  label="Situação"/>
+                        <b:dataTableColumn value="#{car.numCheque}"  label="Núm. Cheque"/>
+                        <b:dataTableColumn value="#{car.emitente}"  label="Emitente"/>
+                    </b:dataTable>
+                </h:form>
             </b:panel>
 
             <br></br>
             <b:panel style="background: rgba(250,250,250,0.63);">
                 <h:form>
                     <b:panelGrid columns="6" size="sm" >
-                        <b:commandButton value="Gravar"  icon-awesome="save" ajax="true" update="@none" look="primary" style="width:180px"/>
-                        <b:commandButton value="Cancelar" icon="cancel" ajax="true" update="@none" look="warning" style="width:180px"/>
-                        <b:commandButton value="Excluir" icon="trash" ajax="true" update="@none" look="danger" style="width:180px"/>
-                        <b:commandButton value="Fechar" icon="remove" ajax="true" update="@none" style="width:180px"/>
+                        <b:commandButton value="Receber" icon="print" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Impressora" icon="print" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Cancelar" icon="" ajax="true" update="@none" look="primary" style="width:120px"/>
+                        <b:commandButton value="Fechar" icon-awesome="" ajax="true" update="@none" look="primary" style="width:120px"/>
                     </b:panelGrid>
                 </h:form>
             </b:panel>
